@@ -1,12 +1,10 @@
-package com.lujianbo.app.reverseproxy.pool;
+package com.lujianbo.app.http.pool;
 
 import com.google.common.net.HostAndPort;
 import io.netty.channel.Channel;
 import org.apache.commons.pool2.KeyedPooledObjectFactory;
 import org.apache.commons.pool2.PooledObject;
 import org.apache.commons.pool2.impl.DefaultPooledObject;
-
-import java.util.function.Function;
 
 /**
  * Created by jianbo on 2017/3/28.

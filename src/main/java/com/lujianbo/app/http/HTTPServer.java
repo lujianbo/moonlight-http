@@ -1,4 +1,4 @@
-package com.lujianbo.app.reverseproxy;
+package com.lujianbo.app.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
@@ -8,13 +8,11 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 
 /**
  * socks 服务器的启动类
  */
-public final class ProxyServer {
+public final class HTTPServer {
 
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
@@ -23,7 +21,7 @@ public final class ProxyServer {
 
     private int port;
 
-    public ProxyServer(int port, ChannelInitializer<SocketChannel> initializer) {
+    public HTTPServer(int port, ChannelInitializer<SocketChannel> initializer) {
         this.initializer = initializer;
         this.port = port;
         bossGroup = new NioEventLoopGroup(1);

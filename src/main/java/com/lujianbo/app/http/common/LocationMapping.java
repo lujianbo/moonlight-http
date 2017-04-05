@@ -1,4 +1,4 @@
-package com.lujianbo.app.reverseproxy.common;
+package com.lujianbo.app.http.common;
 
 import com.google.common.net.HostAndPort;
 import io.netty.handler.codec.http.HttpRequest;

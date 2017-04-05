@@ -1,4 +1,4 @@
-package com.lujianbo.app.reverseproxy.pool;
+package com.lujianbo.app.http.pool;
 
 import com.google.common.net.HostAndPort;
 import io.netty.channel.Channel;

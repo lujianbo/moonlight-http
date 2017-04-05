@@ -1,14 +1,11 @@
-package com.lujianbo.app.reverseproxy.pool;
+package com.lujianbo.app.http.pool;
 
 import com.google.common.net.HostAndPort;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.http.HttpRequestEncoder;
-import io.netty.handler.codec.http.HttpResponseDecoder;
-import org.apache.commons.lang3.StringUtils;
+import io.netty.handler.codec.http.HttpClientCodec;
 
 import java.util.function.Supplier;
 
@@ -29,13 +26,7 @@ public class ConnectorBuilder {
 
     public Channel build(HostAndPort key){
         try {
-            return connect(key.getHost(), key.getPort(), () -> new ChannelInitializer<SocketChannel>() {
-                @Override
-                protected void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast("HttpRequestEncoder", new HttpRequestEncoder());
-                    ch.pipeline().addLast("HttpResponseDecoder", new HttpResponseDecoder());
-                }
-            });
+            return connect(key.getHost(), key.getPort(), HttpClientCodec::new);
         }catch (Exception e){
             return null;
         }

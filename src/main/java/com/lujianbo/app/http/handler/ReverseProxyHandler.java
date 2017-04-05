@@ -1,8 +1,8 @@
-package com.lujianbo.app.reverseproxy.handler;
+package com.lujianbo.app.http.handler;
 
 import com.google.common.net.HostAndPort;
-import com.lujianbo.app.reverseproxy.common.LocationMapping;
-import com.lujianbo.app.reverseproxy.pool.ChannelObjectPool;
+import com.lujianbo.app.http.common.LocationMapping;
+import com.lujianbo.app.http.pool.ChannelObjectPool;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

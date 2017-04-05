@@ -1,4 +1,4 @@
-package com.lujianbo.app.reverseproxy.handler;
+package com.lujianbo.app.http.handler;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
